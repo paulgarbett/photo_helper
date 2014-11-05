@@ -1,0 +1,20 @@
+<h1>Enter a Photo</h1>
+
+<%= form_for( @post, :url => {:action => :entry_post, :controller => :post} ) do |f| %>
+	<div class="camera">
+		<%= f.label :camera %><br>
+		<%= f.text_field :camera %><br>
+	</div>
+	<div class="title">
+		<%= f.label :title %><br>
+		<%= f.text_field :title %><br>
+	</div>
+	<div class="Description">
+		<%= f.label :desc %><br>
+		<%= f.text_area :desc %><br>
+	</div>
+	<div class="actions">
+    <%= f.submit 'Submit Photo'%>
+  </div>
+<% end %>
+
