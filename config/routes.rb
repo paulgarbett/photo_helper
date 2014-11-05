@@ -13,6 +13,9 @@ Rails.application.routes.draw do
 
   get 'post/one' => 'post#one', as: :one
 
+  # comments
+  post 'post/new_comment' => 'post#new_comment', as: :new_comment
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

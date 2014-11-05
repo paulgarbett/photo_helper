@@ -7,5 +7,7 @@ class Post
 	field :title , type: String
 	field :desc , type: String
 
+	# embedding comments into posts
+	embeds_many :comments
 
 end

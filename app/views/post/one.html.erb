@@ -15,3 +15,29 @@
       </tr>
 
 </table>
+
+<!--adding in comments -->
+<%@post.comments.each do |c| %>
+	<div><%=c.author %></div>
+	<div><%=c.comment %></div>
+<% end %>
+
+<h2>New Comment</h2>
+
+<%= form_for(@comment ,:url => {:action => :new_comment, controller => :post} ) do |f| %>
+
+	 <!--ties comment to correct post-->
+  <%= hidden_field_tag :post_id, @post.id %>
+
+		<div class="field">
+      <%= f.label :author %><br>
+      <%= f.text_field :author %>
+    </div>
+    <div class="field">
+      <%= f.label :comment %><br>
+      <%= f.text_area :comment %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

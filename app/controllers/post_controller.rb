@@ -26,6 +26,21 @@ class PostController < ApplicationController
 
 	def one
 		@post = Post.find(params[:post])
+
+		# add in new comment so it can be used by the form
+		@comment = Comment.new
+	end
+
+	def new_comment
+		@id = params[:post_id]
+
+		@post = Post.find(@id)
+
+		@post.comments << Comment.new(params.require(:comment).permit(:author, :comment))
+
+		if @post.save
+			redirect_to entry_path(:post => @id)
+		end
 	end
 
 
