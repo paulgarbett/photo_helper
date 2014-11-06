@@ -13,6 +13,16 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'mongoid'
+gem 'better_errors'
+
+group :test, :development do
+	gem 'mongoid-rspec'
+	gem 'rspec-rails'
+	# Initialize the spec/ directory (where specs will reside) with:
+	# rails generate rspec:install
+	gem 'pry-rails'
+	# place 'binding.pry' anywhere and get dropped into a pry prompt...explore your vars and methods,etc
+end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -27,7 +37,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'

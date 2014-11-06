@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  
+  resources :resources
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -15,6 +22,9 @@ Rails.application.routes.draw do
 
   # comments
   post 'post/new_comment' => 'post#new_comment', as: :new_comment
+
+
+  # root 'users#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

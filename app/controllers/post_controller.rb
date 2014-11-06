@@ -1,5 +1,7 @@
 class PostController < ApplicationController
 
+	skip_before_filter :authorize
+
 	def index   
 		# retrieves all posts from mongo database
 		@posts = Post.all
