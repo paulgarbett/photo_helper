@@ -12,8 +12,7 @@
 	<div><%=c.comment %></div>
 <% end %>
 
-<h2>New Comment</h2>
-
+<!--comments form-->
 <%= form_for(@comment ,:url => {:action => :new_comment, controller => :one} ) do |f| %>
 
 	 <!--ties comment to correct post-->
